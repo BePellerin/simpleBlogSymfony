@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article n°
-{{idNumber}}
+{% block title %}
+
+	{{article.title}}
 
 {% endblock %}
 
-{% block body %}
+
+{% block stylesheets %}
+
 	<style>
 		.example-wrapper {
 			margin: 1em auto;
@@ -18,9 +21,10 @@
 			padding: 2px 6px;
 		}
 	</style>
-
-	<div class="example-wrapper">
-		<p>Résumé du livre N° {{idNumber}} </p>
-	</div>
 {% endblock %}
+{% block body %}
+	<h1>{{article.title}}</h1>
+	<small>{{article.dateCreate|date("d/m/Y")}}</small> 
+<p>{{article.contenu}}</p>
 
+{% endblock %}
